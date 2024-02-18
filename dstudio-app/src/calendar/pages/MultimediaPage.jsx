@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Calendar } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-import { Navbar, MultimediaEvent, MultimediaModal, FabAddNew, FabDelete} from '../';
+import { Navbar, MultimediaModal, FabAddNew, FabDelete, MultimediaEvent} from '../';
+import { EventTable } from '../components/EventTable';
 
-import { localizer, getMessagesES } from '../../helpers';
 import { useUiStore, useCalendarStore } from '../../hooks';
 
 
@@ -45,19 +44,16 @@ export const CalendarPage = () => {
     setLastView( event )
   }
 
-
-
   return (
     <>
       <Navbar />
 
+      <EventTable events={ events }/>
 
       <MultimediaModal />
       
       <FabAddNew />
       <FabDelete />
-
-
     </>
   )
 }

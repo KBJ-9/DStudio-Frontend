@@ -12,9 +12,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import es from 'date-fns/locale/es';
 import { useCalendarStore, useUiStore } from '../../hooks';
 
-
 registerLocale( 'es', es );
-
 
 const customStyles = {
     content: {
@@ -29,7 +27,7 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const MultimediaModal = () => {
+export const CalendarModal = () => {
 
     const { isDateModalOpen, closeDateModal } = useUiStore();
     const { activeEvent, startSavingEvent } = useCalendarStore();
@@ -168,6 +166,12 @@ export const MultimediaModal = () => {
                     onChange={ onInputChanged }
                 ></textarea>
                 <small id="emailHelp" className="form-text text-muted">Información adicional</small>
+            </div>
+
+            {/* Select para la temática */}
+            <div className="form-group mb-2">
+                <label>Temática</label>
+                
             </div>
 
             <button
